@@ -60,9 +60,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ydili"]
 size = Vector2(87, 188)
 
-[node name="Robot" type="CharacterBody2D" node_paths=PackedStringArray("animatedSprite2D")]
+[node name="Robot" type="CharacterBody2D"]
 script = ExtResource("1_cfhel")
-animatedSprite2D = NodePath("AnimatedSprite2D")
+FiletScene = ExtResource("8_a4ql6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_cfn4q")
@@ -72,10 +72,6 @@ frame_progress = 0.738856
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, -4)
 shape = SubResource("RectangleShape2D_ydili")
-
-[node name="filet" parent="." instance=ExtResource("8_a4ql6")]
-visible = false
-position = Vector2(360, -4)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(1, -135)

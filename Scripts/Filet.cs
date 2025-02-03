@@ -4,15 +4,22 @@ using System;
 public partial class Filet : Area2D
 {
 	[Export] public float TempsAvantDisparition = 2.0f;
-	private AnimatedSprite2D sprite;
+	private AnimatedSprite2D filet;
 
 	public override void _Ready()
 	{
-		sprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D"); // Assure-toi que ce chemin est bon
-		sprite.Play("LancerFilet");
+		// Vérifie le bon chemin
+		filet = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+		if (filet == null)
+		{
+			GD.PrintErr("❌ ERREUR : AnimatedSprite2D introuvable !");
+			return;
+		}
 
-		GD.Print($"🎬 Animation actuelle : {sprite.Animation}");
-		GD.Print($"🕐 Frame actuelle : {sprite.Frame}");
+		filet.Play("LancerFilet");
+
+		GD.Print($"🎬 Animation actuelle : {filet.Animation}");
+		GD.Print($"🕐 Frame actuelle : {filet.Frame}");
 		GD.Print($"👀 Filet visible ? {Visible}");
 
 		Connect("body_entered", new Callable(this, nameof(_on_Filet_body_entered)));
@@ -27,11 +34,14 @@ public partial class Filet : Area2D
 			GD.Print("🔥 Monstre attrapé !");
 			monstreHumain.Bloquer();
 
-			GetTree().CreateTimer(TempsAvantDisparition).Timeout += () =>
-			{
-				GD.Print("🧹 Filet supprimé !");
-				QueueFree();
-			};
+			var timer = GetTree().CreateTimer(TempsAvantDisparition);
+			timer.Connect("timeout", new Callable(this, nameof(_on_Timer_Timeout)));
 		}
+	}
+
+	private void _on_Timer_Timeout()
+	{
+		GD.Print("🧹 Filet supprimé !");
+		QueueFree();
 	}
 }
