@@ -204,7 +204,7 @@ public partial class Robot : CharacterBody2D
 	[Export] private PackedScene FiletScene;  // Ajoute cette ligne pour exporter la scène du filet
 	private Timer filetTimer;  
 
-	public const float Speed = 300.0f;
+	public const float Speed = 800.0f;
 	public const float JumpVelocity = -900.0f;
 	public int Vie = 30;
 
@@ -255,7 +255,20 @@ public partial class Robot : CharacterBody2D
 		{
 			velocity.X = Mathf.MoveToward(Velocity.X, 0, Speed);
 		}
-
+		
+		var animatedSprite2D = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+		
+		if (direction.X != 0)
+		{
+		animatedSprite2D.Play();
+		animatedSprite2D.Animation = "marche_gauche";
+		animatedSprite2D.FlipH = direction.X < 0;
+		}
+		else
+		{
+		animatedSprite2D.Animation = "Repos";
+		}
+		
 		Velocity = velocity;
 		MoveAndSlide();
 	}

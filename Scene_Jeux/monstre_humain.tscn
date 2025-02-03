@@ -1,73 +1,32 @@
-[gd_scene load_steps=13 format=3 uid="uid://cuufbm6upscih"]
+[gd_scene load_steps=8 format=3 uid="uid://cuufbm6upscih"]
 
 [ext_resource type="Script" path="res://Scripts/MonstreHumain.cs" id="1_bk5nx"]
-[ext_resource type="Texture2D" uid="uid://cv2q87tueaw3v" path="res://Personnages/Monstres/SlimeBasic_00000.png" id="2_6ofb0"]
-[ext_resource type="Texture2D" uid="uid://dskajdcc4yxnb" path="res://Personnages/Monstres/SlimeBasic_00001.png" id="3_8lmi8"]
-[ext_resource type="Texture2D" uid="uid://cqt3vogpd0wtr" path="res://Personnages/Monstres/SlimeBasic_00002.png" id="4_ayr73"]
-[ext_resource type="Texture2D" uid="uid://chrb66cbyc7h" path="res://Personnages/Monstres/SlimeBasic_00003.png" id="5_tnnid"]
-[ext_resource type="Texture2D" uid="uid://beimxsam24dqe" path="res://Personnages/Monstres/SlimeBasic_00004.png" id="6_ds83u"]
-[ext_resource type="Texture2D" uid="uid://dodi7f2nliq56" path="res://Personnages/Monstres/SlimeBasic_00005.png" id="7_j2avj"]
-[ext_resource type="Texture2D" uid="uid://03loo7ht8m8o" path="res://Personnages/Monstres/SlimeBasic_00006.png" id="8_6705b"]
-[ext_resource type="Texture2D" uid="uid://d2yl1jck3muln" path="res://Personnages/Monstres/SlimeBasic_00007.png" id="9_8nucs"]
+[ext_resource type="Texture2D" uid="uid://e0nb52ii5576" path="res://AssetsNobisps/ennemi_marche.png" id="2_64ueb"]
+[ext_resource type="Texture2D" uid="uid://buissbb5eqggj" path="res://AssetsNobisps/ennemi_marche2.png" id="3_cxuc5"]
+[ext_resource type="Texture2D" uid="uid://blr4jm4exktuf" path="res://AssetsNobisps/ennemi_marche3.png" id="4_mnv2b"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_a4ikb"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_6ofb0")
+"texture": ExtResource("2_64ueb")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_8lmi8")
+"texture": ExtResource("3_cxuc5")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_ayr73")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_tnnid")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_ds83u")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_j2avj")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_6705b")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_8nucs")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_6705b")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_j2avj")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_ds83u")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_ayr73")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_tnnid")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_8lmi8")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_6ofb0")
+"texture": ExtResource("4_mnv2b")
 }],
 "loop": true,
 "name": &"avancer",
-"speed": 19.0
+"speed": 15.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hr6vx"]
-size = Vector2(299, 199)
+size = Vector2(299, 1032)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_exuh6"]
-radius = 165.012
+radius = 387.569
 
 [node name="MonstreHumain" type="CharacterBody2D" node_paths=PackedStringArray("animatedSprite2D", "_area2D")]
 disable_mode = 2
@@ -76,13 +35,14 @@ animatedSprite2D = NodePath("AnimatedSprite2D")
 _area2D = NodePath("Area2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_a4ikb")
 animation = &"avancer"
 autoplay = "avancer"
-frame_progress = 0.393019
+frame_progress = 0.788794
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1.5, 0.5)
+position = Vector2(1.5, 117)
 shape = SubResource("RectangleShape2D_hr6vx")
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -90,6 +50,7 @@ disable_mode = 2
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(2, 210)
 shape = SubResource("CircleShape2D_exuh6")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Filet_body_entered"]

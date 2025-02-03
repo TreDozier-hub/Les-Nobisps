@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://fh2of3jkl0v7"]
+[gd_scene load_steps=32 format=4 uid="uid://fh2of3jkl0v7"]
 
 [ext_resource type="Texture2D" uid="uid://bug00i6w5d6yt" path="res://Scene_Decor/SolLunaire.png" id="1_7lhro"]
 [ext_resource type="PackedScene" uid="uid://cuufbm6upscih" path="res://Scene_Jeux/monstre_humain.tscn" id="2_h07a8"]
@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://0jjn3xgtfwvf" path="res://Planete/16.png" id="19_5ut0r"]
 [ext_resource type="Texture2D" uid="uid://gpm2lugagtlk" path="res://Planete/17.png" id="20_opcbo"]
 [ext_resource type="PackedScene" uid="uid://dqj6lv2p4pvpn" path="res://Scene_Decor/Robot.tscn" id="26_t5tgi"]
+[ext_resource type="AudioStream" uid="uid://bnvqnqr705yqn" path="res://musique/Obispo Fan.mp3" id="27_l3p2s"]
 [ext_resource type="Texture2D" uid="uid://d1kmu25q8kdwn" path="res://Scene_Decor/SolLunaire - Copie.png" id="35_ypykm"]
 [ext_resource type="Texture2D" uid="uid://pwyflc0amm42" path="res://Scene_Decor/Pierres/Trou.png" id="38_ks4hb"]
 
@@ -241,11 +242,11 @@ tile_set = SubResource("TileSet_xteuu")
 
 [node name="MonstreHumain" parent="SceneMap/CanvasLayer" instance=ExtResource("2_h07a8")]
 z_index = 1
-position = Vector2(5691, 140)
+position = Vector2(5679, -256)
 scale = Vector2(0.5, 0.5)
 
 [node name="Robot" parent="SceneMap/CanvasLayer" instance=ExtResource("26_t5tgi")]
-position = Vector2(23, -518)
+position = Vector2(23, -380)
 
 [node name="Trou" type="Sprite2D" parent="SceneMap/CanvasLayer"]
 position = Vector2(-2069, 518)
@@ -255,3 +256,7 @@ texture = ExtResource("38_ks4hb")
 position = Vector2(6282, 107)
 scale = Vector2(0.493886, 0.493886)
 texture = ExtResource("16_kp18v")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("27_l3p2s")
+autoplay = true

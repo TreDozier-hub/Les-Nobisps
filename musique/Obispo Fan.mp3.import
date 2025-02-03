@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bnvqnqr705yqn"
+path="res://.godot/imported/Obispo Fan.mp3-dfbe0ce06c53055640e0fd5bab5d40c9.mp3str"
+
+[deps]
+
+source_file="res://musique/Obispo Fan.mp3"
+dest_files=["res://.godot/imported/Obispo Fan.mp3-dfbe0ce06c53055640e0fd5bab5d40c9.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
