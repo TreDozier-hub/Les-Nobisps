@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dqj6lv2p4pvpn"]
+[gd_scene load_steps=13 format=3 uid="uid://dqj6lv2p4pvpn"]
 
 [ext_resource type="Script" path="res://Scripts/Robot.cs" id="1_cfhel"]
 [ext_resource type="Texture2D" uid="uid://dircisw7cc1oo" path="res://Personnages/Robot/Repos/2.png" id="2_2e0qg"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://cia2vimxf7lio" path="res://Personnages/Robot/Repos/2_2.png" id="4_vx7ue"]
 [ext_resource type="Texture2D" uid="uid://b5xhxlf0r18od" path="res://Personnages/Robot/Marche/3.png" id="4_yoy31"]
 [ext_resource type="PackedScene" uid="uid://dulp005slmwxx" path="res://Scene_Jeux/filet.tscn" id="8_a4ql6"]
+[ext_resource type="Texture2D" uid="uid://byhtwv16u66s3" path="res://Personnages/barre Vie/Fichier_2.png" id="9_xv5h2"]
+[ext_resource type="Texture2D" uid="uid://mh455vdx30kb" path="res://Personnages/barre Vie/Fichier_1.png" id="10_og5vb"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cfn4q"]
 animations = [{
@@ -76,3 +78,12 @@ shape = SubResource("RectangleShape2D_ydili")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(1, -135)
 zoom = Vector2(0.31, 0.31)
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+visible = false
+offset_left = -33.0
+offset_top = -156.0
+offset_right = 770.0
+offset_bottom = -58.0
+texture_under = ExtResource("9_xv5h2")
+texture_progress = ExtResource("10_og5vb")

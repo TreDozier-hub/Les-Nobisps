@@ -201,9 +201,11 @@ using System;
 
 public partial class Robot : CharacterBody2D
 {
+	[Export] public TextureProgressBar vie = null;
 	[Export] private PackedScene FiletScene;  // Ajoute cette ligne pour exporter la scène du filet
 	[Export] private AnimatedSprite2D animatedSprite2D;
 	private Timer filetTimer;  
+	//private TextureProgressBar vie;
 
 	public const float Speed = 300.0f;
 	public const float JumpVelocity = -900.0f;
@@ -211,6 +213,10 @@ public partial class Robot : CharacterBody2D
 
 	public override void _Ready()
 	{
+		vie = GetNode<TextureProgressBar>("TextureProgressBar");
+		vie.Value = Vie;
+		
+		
 		// Vérifie si la scène du filet est bien assignée
 		if (FiletScene == null)
 		{
@@ -295,6 +301,7 @@ public partial class Robot : CharacterBody2D
 	{
 		Vie -= domage;
 		GD.Print("💥 Robot Vie: " + Vie);
+				vie.Value = Vie;
 
 		if (Vie <= 0)
 		{
