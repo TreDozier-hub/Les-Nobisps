@@ -85,5 +85,5 @@ public partial class MonstreHumain : CharacterBody2D
 	//Speed = 0;
 	//MoveAndSlide(); // Forcer la mise à jour immédiate
 //}
-
+//Ta groose tête
 }
