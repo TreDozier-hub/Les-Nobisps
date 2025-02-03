@@ -52,7 +52,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("4_yoy31")
 }],
-"loop": true,
+"loop": false,
 "name": &"marche_gauche",
 "speed": 5.0
 }]
@@ -60,14 +60,14 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ydili"]
 size = Vector2(87, 188)
 
-[node name="Robot" type="CharacterBody2D"]
+[node name="Robot" type="CharacterBody2D" node_paths=PackedStringArray("animatedSprite2D")]
 script = ExtResource("1_cfhel")
 FiletScene = ExtResource("8_a4ql6")
+animatedSprite2D = NodePath("AnimatedSprite2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_cfn4q")
 animation = &"marche_droite"
-frame_progress = 0.738856
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, -4)

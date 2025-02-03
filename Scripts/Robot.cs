@@ -202,6 +202,7 @@ using System;
 public partial class Robot : CharacterBody2D
 {
 	[Export] private PackedScene FiletScene;  // Ajoute cette ligne pour exporter la scène du filet
+	[Export] private AnimatedSprite2D animatedSprite2D;
 	private Timer filetTimer;  
 
 	public const float Speed = 300.0f;
@@ -235,7 +236,7 @@ public partial class Robot : CharacterBody2D
 
 		// Gestion du saut
 		if (Input.IsActionJustPressed("ui_up") && IsOnFloor())
-		{
+		{			
 			velocity.Y = JumpVelocity;
 		}
 
@@ -249,13 +250,20 @@ public partial class Robot : CharacterBody2D
 		Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
 		if (direction != Vector2.Zero)
 		{
+			animatedSprite2D.Play("marche_droite");
 			velocity.X = direction.X * Speed;
 		}
 		else
 		{
 			velocity.X = Mathf.MoveToward(Velocity.X, 0, Speed);
 		}
-
+		if (Input.IsActionJustPressed("ui_left"))
+		{
+			
+			animatedSprite2D.Play("marche_gauche");
+		}
+		
+		
 		Velocity = velocity;
 		MoveAndSlide();
 	}
@@ -297,5 +305,6 @@ public partial class Robot : CharacterBody2D
 	private void Mort()
 	{        
 		QueueFree(); // Supprime le robot de la scène
+		//Is dead 
 	}
 	}
