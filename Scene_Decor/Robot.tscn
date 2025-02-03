@@ -1,0 +1,82 @@
+[gd_scene load_steps=11 format=3 uid="uid://dqj6lv2p4pvpn"]
+
+[ext_resource type="Script" path="res://Scripts/Robot.cs" id="1_cfhel"]
+[ext_resource type="Texture2D" uid="uid://dircisw7cc1oo" path="res://Personnages/Robot/Repos/2.png" id="2_2e0qg"]
+[ext_resource type="Texture2D" uid="uid://qv62blh7rgv5" path="res://Personnages/Robot/Marche/1.png" id="2_2lv6a"]
+[ext_resource type="Texture2D" uid="uid://ddiync6td23cp" path="res://Personnages/Robot/Repos/2_1.png" id="3_813ox"]
+[ext_resource type="Texture2D" uid="uid://cgc7wolbdtb16" path="res://Personnages/Robot/Marche/2.png" id="3_gix8t"]
+[ext_resource type="Texture2D" uid="uid://cia2vimxf7lio" path="res://Personnages/Robot/Repos/2_2.png" id="4_vx7ue"]
+[ext_resource type="Texture2D" uid="uid://b5xhxlf0r18od" path="res://Personnages/Robot/Marche/3.png" id="4_yoy31"]
+[ext_resource type="PackedScene" uid="uid://dulp005slmwxx" path="res://Scene_Jeux/filet.tscn" id="8_a4ql6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cfn4q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2e0qg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_813ox")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_vx7ue")
+}],
+"loop": true,
+"name": &"Repos",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2lv6a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gix8t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yoy31")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gix8t")
+}],
+"loop": true,
+"name": &"marche_droite",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2lv6a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gix8t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yoy31")
+}],
+"loop": true,
+"name": &"marche_gauche",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ydili"]
+size = Vector2(87, 188)
+
+[node name="Robot" type="CharacterBody2D" node_paths=PackedStringArray("animatedSprite2D")]
+script = ExtResource("1_cfhel")
+animatedSprite2D = NodePath("AnimatedSprite2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_cfn4q")
+animation = &"marche_droite"
+frame_progress = 0.738856
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -4)
+shape = SubResource("RectangleShape2D_ydili")
+
+[node name="filet" parent="." instance=ExtResource("8_a4ql6")]
+visible = false
+position = Vector2(360, -4)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1, -135)
+zoom = Vector2(0.31, 0.31)

@@ -1,0 +1,95 @@
+[gd_scene load_steps=14 format=3 uid="uid://dulp005slmwxx"]
+
+[ext_resource type="Texture2D" uid="uid://cf63ylgrj51dc" path="res://Scene_Jeux/Filets/1.png" id="1_ll62e"]
+[ext_resource type="Texture2D" uid="uid://cito6qi336uwv" path="res://Scene_Jeux/Filets/2.png" id="2_6iw6g"]
+[ext_resource type="Texture2D" uid="uid://cufr4ao8ubfnq" path="res://Scene_Jeux/Filets/3.png" id="3_0nbf2"]
+[ext_resource type="Texture2D" uid="uid://cp5o5pbkayxiv" path="res://Scene_Jeux/Filets/4.png" id="4_5fhjx"]
+[ext_resource type="Texture2D" uid="uid://cctdg62vcclrd" path="res://Scene_Jeux/Filets/5.png" id="5_2esv7"]
+[ext_resource type="Texture2D" uid="uid://bxmcdq410vbrb" path="res://Scene_Jeux/Filets/6.png" id="6_smkey"]
+[ext_resource type="Texture2D" uid="uid://c2tstrculwqpv" path="res://Scene_Jeux/Filets/7.png" id="7_6sxis"]
+[ext_resource type="Texture2D" uid="uid://d3t01ikj0tloa" path="res://Scene_Jeux/Filets/8.png" id="8_dkkf6"]
+[ext_resource type="Texture2D" uid="uid://dgaddy1gjxdbj" path="res://Scene_Jeux/Filets/9.png" id="9_0iatq"]
+[ext_resource type="Script" path="res://Scripts/Filet.cs" id="10_oakp5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ahaf5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ll62e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_6iw6g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0nbf2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5fhjx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2esv7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_smkey")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_6sxis")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_dkkf6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_0iatq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_0iatq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_0iatq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_0iatq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_0iatq")
+}],
+"loop": false,
+"name": &"LancerFilet",
+"speed": 15.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0nyog"]
+size = Vector2(297, 190)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s2rni"]
+size = Vector2(285, 188)
+
+[node name="filet" type="Area2D"]
+visible = false
+z_index = 3
+disable_mode = 2
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("10_oakp5")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_ahaf5")
+animation = &"LancerFilet"
+frame = 12
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(148, 3)
+shape = SubResource("RectangleShape2D_0nyog")
+
+[node name="Area2D" type="Area2D" parent="CollisionShape2D"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionShape2D/Area2D"]
+visible = false
+position = Vector2(6, 2)
+shape = SubResource("RectangleShape2D_s2rni")
+
+[connection signal="body_entered" from="CollisionShape2D/Area2D" to="." method="_on_Filet_body_entered"]

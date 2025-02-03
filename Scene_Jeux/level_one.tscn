@@ -1,0 +1,257 @@
+[gd_scene load_steps=31 format=4 uid="uid://fh2of3jkl0v7"]
+
+[ext_resource type="Texture2D" uid="uid://bug00i6w5d6yt" path="res://Scene_Decor/SolLunaire.png" id="1_7lhro"]
+[ext_resource type="PackedScene" uid="uid://cuufbm6upscih" path="res://Scene_Jeux/monstre_humain.tscn" id="2_h07a8"]
+[ext_resource type="Texture2D" uid="uid://jk308n1aqr3k" path="res://Scene_Decor/Background/Etoiles_Toutes-01.png" id="3_khdy6"]
+[ext_resource type="Script" path="res://Scripts/EtoilesToutes.cs" id="4_fsd4j"]
+[ext_resource type="Texture2D" uid="uid://ca0f2r06k8bne" path="res://Planete/1.png" id="4_mrmkd"]
+[ext_resource type="Texture2D" uid="uid://1r4ma0k773y0" path="res://Planete/2.png" id="5_wweu4"]
+[ext_resource type="Texture2D" uid="uid://b65fk2n5h2qtd" path="res://Planete/3.png" id="6_v0q08"]
+[ext_resource type="Texture2D" uid="uid://jbi5ugsyhpl4" path="res://Planete/4.png" id="7_bysgt"]
+[ext_resource type="Texture2D" uid="uid://b88vr0gdwxjmy" path="res://Planete/5.png" id="8_vxj0j"]
+[ext_resource type="Texture2D" uid="uid://d3nyrxvog71uc" path="res://Planete/6.png" id="9_wp3wm"]
+[ext_resource type="Texture2D" uid="uid://dl5whgr0oq2q2" path="res://Planete/7.png" id="10_ojd21"]
+[ext_resource type="Texture2D" uid="uid://75licr3ldh4b" path="res://Planete/8.png" id="11_h0a4i"]
+[ext_resource type="Texture2D" uid="uid://d2vdgbyc7ofrd" path="res://Planete/9.png" id="12_vmpn1"]
+[ext_resource type="Texture2D" uid="uid://lg4yi7saax84" path="res://Scene_Decor/Background/Planète_Opacité.png" id="13_5c7m3"]
+[ext_resource type="Texture2D" uid="uid://bj0cs5qup207p" path="res://Planete/10.png" id="13_ls6sp"]
+[ext_resource type="Texture2D" uid="uid://2vglf76thrl5" path="res://Planete/11.png" id="14_kxn6r"]
+[ext_resource type="Texture2D" uid="uid://d0n5e5jmbnhh8" path="res://Planete/12.png" id="15_nngnj"]
+[ext_resource type="Texture2D" uid="uid://dcn2vofmrvm6e" path="res://Planete/13.png" id="16_65l2d"]
+[ext_resource type="Texture2D" uid="uid://drmmnpv8phgkf" path="res://Scene_Decor/Pierres/Pierres_4.png" id="16_kp18v"]
+[ext_resource type="Texture2D" uid="uid://47tv0xqvpjwu" path="res://Planete/14.png" id="17_m4t00"]
+[ext_resource type="Texture2D" uid="uid://dsc6yoivx88sj" path="res://Planete/15.png" id="18_ful2s"]
+[ext_resource type="Texture2D" uid="uid://0jjn3xgtfwvf" path="res://Planete/16.png" id="19_5ut0r"]
+[ext_resource type="Texture2D" uid="uid://gpm2lugagtlk" path="res://Planete/17.png" id="20_opcbo"]
+[ext_resource type="PackedScene" uid="uid://dqj6lv2p4pvpn" path="res://Scene_Decor/Robot.tscn" id="26_t5tgi"]
+[ext_resource type="Texture2D" uid="uid://d1kmu25q8kdwn" path="res://Scene_Decor/SolLunaire - Copie.png" id="35_ypykm"]
+[ext_resource type="Texture2D" uid="uid://pwyflc0amm42" path="res://Scene_Decor/Pierres/Trou.png" id="38_ks4hb"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8rw62"]
+animations = [{
+"frames": [{
+"duration": 10.0,
+"texture": ExtResource("4_mrmkd")
+}, {
+"duration": 10.0,
+"texture": ExtResource("5_wweu4")
+}, {
+"duration": 10.0,
+"texture": ExtResource("6_v0q08")
+}, {
+"duration": 10.0,
+"texture": ExtResource("7_bysgt")
+}, {
+"duration": 10.0,
+"texture": ExtResource("8_vxj0j")
+}, {
+"duration": 10.0,
+"texture": ExtResource("9_wp3wm")
+}, {
+"duration": 10.0,
+"texture": ExtResource("10_ojd21")
+}, {
+"duration": 10.0,
+"texture": ExtResource("11_h0a4i")
+}, {
+"duration": 10.0,
+"texture": ExtResource("12_vmpn1")
+}, {
+"duration": 10.0,
+"texture": ExtResource("13_ls6sp")
+}, {
+"duration": 10.0,
+"texture": ExtResource("14_kxn6r")
+}, {
+"duration": 10.0,
+"texture": ExtResource("15_nngnj")
+}, {
+"duration": 10.0,
+"texture": ExtResource("16_65l2d")
+}, {
+"duration": 10.0,
+"texture": ExtResource("17_m4t00")
+}, {
+"duration": 10.0,
+"texture": ExtResource("18_ful2s")
+}, {
+"duration": 10.0,
+"texture": ExtResource("19_5ut0r")
+}, {
+"duration": 10.0,
+"texture": ExtResource("20_opcbo")
+}],
+"loop": true,
+"name": &"rotationPlanete",
+"speed": 2.0
+}]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_533lo"]
+texture = ExtResource("35_ypykm")
+texture_region_size = Vector2i(450, 450)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-225, -67.2, 225, -67.7999, 225, 225, -225, 225)
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qck7e"]
+texture = ExtResource("1_7lhro")
+texture_region_size = Vector2i(450, 450)
+use_texture_padding = false
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-225, 7.20001, 225, 7.20001, 225, 225, -225, 225)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-225, 7.20001, 225, 7.20001, 225, 225, -225, 225)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-225, 7.20001, 225, 7.20001, 225, 225, -225, 225)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-225, 7.20001, 225, 7.20001, 225, 225, -225, 225)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-225, 7.20001, 225, 7.20001, 225, 225, -225, 225)
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-225, 7.20001, 225, 7.20001, 225, 225, -225, 225)
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-225, 7.20001, 225, 7.20001, 225, 225, -225, 225)
+7:0/0 = 0
+7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-225, 7.20001, 225, 7.20001, 225, 225, -225, 225)
+8:0/0 = 0
+8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-225, 7.20001, 225, 7.20001, 225, 225, -225, 225)
+9:0/0 = 0
+9:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-225, 7.20001, 225, 7.20001, 225, 225, -225, 225)
+10:0/0 = 0
+10:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-225, 7.20001, 225, 7.20001, 225, 225, -225, 225)
+11:0/0 = 0
+11:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-225, 7.20001, 225, 7.20001, 225, 225, -225, 225)
+12:0/0 = 0
+12:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-225, 7.20001, 225, 7.20001, 225, 225, -225, 225)
+13:0/0 = 0
+13:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-225, 7.20001, 225, 7.20001, 225, 225, -225, 225)
+14:0/0 = 0
+14:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-225, 7.20001, 225, 7.20001, 225, 225, -225, 225)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-225, -225, 225, -225, 225, 225, -225, 225)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-225, -225, 225, -225, 225, 225, -225, 225)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-225, -225, 225, -225, 225, 225, -225, 225)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-225, -225, 225, -225, 225, 225, -225, 225)
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-225, -225, 225, -225, 225, 225, -225, 225)
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-225, -225, 225, -225, 225, 225, -225, 225)
+6:1/0 = 0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-225, -225, 225, -225, 225, 225, -225, 225)
+7:1/0 = 0
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-225, -225, 225, -225, 225, 225, -225, 225)
+8:1/0 = 0
+8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-225, -225, 225, -225, 225, 225, -225, 225)
+9:1/0 = 0
+9:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-225, -225, 225, -225, 225, 225, -225, 225)
+10:1/0 = 0
+10:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-225, -225, 225, -225, 225, 225, -225, 225)
+11:1/0 = 0
+11:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-225, -225, 225, -225, 225, 225, -225, 225)
+12:1/0 = 0
+12:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-225, -225, 225, -225, 225, 225, -225, 225)
+13:1/0 = 0
+13:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-225, -225, 225, -225, 225, 225, -225, 225)
+14:1/0 = 0
+14:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-225, -225, 225, -225, 225, 225, -225, 225)
+
+[sub_resource type="TileSet" id="TileSet_xteuu"]
+tile_size = Vector2i(450, 450)
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 2
+sources/2 = SubResource("TileSetAtlasSource_qck7e")
+sources/0 = SubResource("TileSetAtlasSource_533lo")
+
+[node name="Level One" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+follow_viewport_scale = 0.7
+
+[node name="EtoilesToutes" type="Sprite2D" parent="CanvasLayer"]
+z_index = -3
+z_as_relative = false
+position = Vector2(2482.94, -2453)
+scale = Vector2(1.06426, 1.06426)
+texture = ExtResource("3_khdy6")
+flip_v = true
+script = ExtResource("4_fsd4j")
+
+[node name="EtoilesToutes2" type="Sprite2D" parent="CanvasLayer"]
+z_index = -3
+z_as_relative = false
+position = Vector2(-5305.71, -2453)
+scale = Vector2(0.979827, 1.06426)
+texture = ExtResource("3_khdy6")
+flip_v = true
+script = ExtResource("4_fsd4j")
+
+[node name="PlanèteOpacité" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(3183, -799)
+texture = ExtResource("13_5c7m3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(4121.43, -517.143)
+sprite_frames = SubResource("SpriteFrames_8rw62")
+animation = &"rotationPlanete"
+autoplay = "rotationPlanete"
+frame_progress = 0.0546103
+
+[node name="SceneMap" type="Node" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="SceneMap"]
+follow_viewport_enabled = true
+
+[node name="Sol" type="TileMapLayer" parent="SceneMap/CanvasLayer"]
+position = Vector2(0, -53)
+tile_map_data = PackedByteArray("AAD8/wAAAgAJAAAAAAD9/wAAAgAJAAAAAAD+/wAAAgABAAAAAAD//wAAAgACAAAAAAAAAAAAAgADAAAAAAABAAAAAgAEAAAAAAACAAAAAgAFAAAAAAADAAAAAgAFAAAAAAAEAAAAAgAEAAAAAAAFAAAAAgAHAAAAAAAGAAAAAgAMAAAAAAAHAAAAAgANAAAAAAAIAAAAAgAOAAAAAAAJAAAAAgAKAAAAAAAKAAAAAgALAAAAAAALAAAAAgAJAAAAAAAMAAAAAgAJAAAAAAANAAAAAgAJAAAAAAAOAAAAAgAFAAAAAAD8/wEAAgADAAEAAAD9/wEAAgAKAAEAAAD+/wEAAgALAAEAAAD//wEAAgAMAAEAAAAAAAEAAgANAAEAAAABAAEAAgAJAAEAAAACAAEAAgACAAEAAAADAAEAAgADAAEAAAAEAAEAAgAFAAEAAAAFAAEAAgAFAAEAAAAGAAEAAgAHAAEAAAAHAAEAAgAIAAEAAAAIAAEAAgAGAAEAAAAJAAEAAgAFAAEAAAAKAAEAAgACAAEAAAALAAEAAgADAAEAAAAMAAEAAgAOAAEAAAANAAEAAgACAAEAAAAOAAEAAgAAAAEAAAD5/wEAAgAAAAEAAAD6/wEAAgABAAEAAAD7/wEAAgACAAEAAAD7/wAAAgAJAAAAAAD6/wAAAgAJAAAAAAD5/wAAAgAJAAAAAAA=")
+tile_set = SubResource("TileSet_xteuu")
+
+[node name="MonstreHumain" parent="SceneMap/CanvasLayer" instance=ExtResource("2_h07a8")]
+z_index = 1
+position = Vector2(5691, 140)
+scale = Vector2(0.5, 0.5)
+
+[node name="Robot" parent="SceneMap/CanvasLayer" instance=ExtResource("26_t5tgi")]
+position = Vector2(23, -518)
+
+[node name="Trou" type="Sprite2D" parent="SceneMap/CanvasLayer"]
+position = Vector2(-2069, 518)
+texture = ExtResource("38_ks4hb")
+
+[node name="Pierres4" type="Sprite2D" parent="SceneMap/CanvasLayer"]
+position = Vector2(6282, 107)
+scale = Vector2(0.493886, 0.493886)
+texture = ExtResource("16_kp18v")
