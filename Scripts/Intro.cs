@@ -6,33 +6,34 @@ public partial class Intro : Node
 	public override void _Ready()
 	{
 		
-		// Assure-toi que le chemin est correct
+		
 		label = GetNodeOrNull<RichTextLabel>("RichTextLabel");
 
-		if (label == null)
-		{
-			GD.PrintErr("❌ ERREUR : RichTextLabel introuvable !");
-		}
-		else
-		{
-			GD.Print("✅ RichTextLabel trouvé !");
-		}
+		//if (label == null)
+		//{
+			//GD.PrintErr("❌ ERREUR ");
+		//}
+		//else
+		//{
+			//GD.Print("trouvé !");
+		//}
 		
 		AnimationPlayer animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
 		if (animationPlayer != null)
 		{
-			animationPlayer.Play("scroll_text");  // Joue l'animation
-			animationPlayer.AnimationFinished += OnAnimationFinished;  // Détecte la fin de l'animation
+			  // Joue l'animation
+			animationPlayer.Play("scroll_text");
+			animationPlayer.AnimationFinished += OnAnimationFinished;
 		}
 		else
 		{
-			GD.PrintErr("❌ ERREUR : AnimationPlayer non trouvé !");
+			GD.PrintErr("❌ ERREUR!");
 		}
 	}
 
 	private void OnAnimationFinished(StringName animName)
 	{
-		if (animName == "scroll_text") // Vérifie si c'est bien l'animation du texte
+		if (animName == "scroll_text") 
 		{
 			GetTree().ChangeSceneToFile("res://Scene_Jeux/level_one.tscn");
 		}

@@ -7,20 +7,19 @@ public partial class Filet : Area2D
 	private AnimatedSprite2D filet;
 
 	public override void _Ready()
-	{
-		// Vérifie le bon chemin
+	{		
 		filet = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 		if (filet == null)
 		{
-			GD.PrintErr("❌ ERREUR : AnimatedSprite2D introuvable !");
+			GD.PrintErr("❌ ERREUR");
 			return;
 		}
 
 		filet.Play("LancerFilet");
 
-		GD.Print($"🎬 Animation actuelle : {filet.Animation}");
-		GD.Print($"🕐 Frame actuelle : {filet.Frame}");
-		GD.Print($"👀 Filet visible ? {Visible}");
+		//GD.Print($"🎬 Animation actuelle : {filet.Animation}");
+		//GD.Print($"🕐 Frame actuelle : {filet.Frame}");
+		//GD.Print($"👀 Filet visible ? {Visible}");
 
 		Connect("body_entered", new Callable(this, nameof(_on_Filet_body_entered)));
 	}

@@ -17,11 +17,11 @@ public partial class MonstreHumain : CharacterBody2D
 		}
 		else
 		{
-			GD.PrintErr("⚠️ _area2D n'est pas assigné dans l'inspecteur !");
+			GD.PrintErr("⚠️ !");
 		}
 	}
 
-	// ✅ Déplacement du monstre
+	// Déplacement du monstre
 	private void Avancer()
 	{
 		Velocity = new Vector2(-Speed, 0);
@@ -34,7 +34,7 @@ public partial class MonstreHumain : CharacterBody2D
 		}
 	}
 	
-	// ✅ Collision avec le robot
+	// Collision avec le robot
 	private void OnArea2DBodyEntered(Node body)
 	///_on_area_2d_body_entered
 	{
@@ -47,7 +47,7 @@ public partial class MonstreHumain : CharacterBody2D
 		}
 	}
 
-	// ✅ Déplacement continu du monstre
+	//Déplacement continu du monstre
 	public override void _PhysicsProcess(double delta)
 	{
 		Vector2 velocity = Velocity;
@@ -62,13 +62,13 @@ public partial class MonstreHumain : CharacterBody2D
 		MoveAndSlide();
 	}
 	
-	// ✅ Bloquer le monstre avec le filet
+	// Bloquer le monstre avec le filet
 	public void Bloquer()
 	{
 		GD.Print("🕸️ Le monstre est pris au piège !");
 		Velocity = Vector2.Zero;
 		Speed = 0;
-		MoveAndSlide(); // Appliquer la mise à jour
+		MoveAndSlide();
 
 		var timer = GetTree().CreateTimer(2.0);
 		timer.Timeout += () => 
@@ -78,12 +78,4 @@ public partial class MonstreHumain : CharacterBody2D
 		};
 	}
 	
-	//public void Bloquer()
-//{
-	//GD.Print("🕸️ Le monstre est pris au piège !");
-	//Velocity = Vector2.Zero;
-	//Speed = 0;
-	//MoveAndSlide(); // Forcer la mise à jour immédiate
-//}
-//Ta groose tête
 }
